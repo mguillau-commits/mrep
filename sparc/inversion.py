@@ -84,6 +84,8 @@ class Inversion(BaseExtractor):
         states=states[self.tgt_layer].cpu().numpy()
         if self.freqcut>0:
             states=butter_bandpass_filter(states,self.freqcut,self.ft_sr,axis=1)
+        
+
         state_shape = states.shape
         states = states.reshape(-1,state_shape[-1])
         with torch.no_grad():
@@ -96,6 +98,10 @@ class Inversion(BaseExtractor):
         if include_acoustics:
             low_acoustics_ = speech_outputs.hidden_states[self.spk_target_layer].cpu().numpy()
             outputs["acoustics"] = low_acoustics_
+
+        print('_extract_ema: v4')
+        outputs["acoustics_wvlm"] = states # PLB 2025 01 15
+
         return outputs
         
     

@@ -22,6 +22,7 @@ def load_model(model_name=None, config=None, ckpt=None,
                use_penn=False,
                **kwargs):
     
+    print('load_model v3')
     if model_name is not None:
         model_name = model_name_map[model_name]
         if config is None:
@@ -126,8 +127,15 @@ class SPARC(BaseExtractor):
         self.source_extractor.to(device)
         self.speaker_encoder.to(device)
     
-    
-    def encode(self, wavs, split_batch=True, reduce=True):
+    def encode_ema(self, wavs, split_batch=True, reduce=True):
+        wavs = self.process_wavfiles(wavs)
+        outputs = {}
+        include_acoustics=False
+        outputs = self.inverter(wavs, outputs, include_acoustics=include_acoustics)
+        return outputs
+
+    def encode(self, wavs, split_batch=False, reduce=True, include_acoustics=False):
+        # print('v1')
         wavs = self.process_wavfiles(wavs)
         outputs = {}
         include_acoustics=True
