@@ -1,0 +1,20 @@
+# from  https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+conda create --prefix ./envs python=3.9
+
+# 
+conda config --set env_prompt '({name})'
+
+pip install -e . 
+
+pip install ipython
+pip install ipykernel
+
+conda env export > environment_from_setuppy_20250122.yml
+
+conda activate "/Users/ly546/Library/CloudStorage/GoogleDrive-1prlabu1@gmail.com/My Drive/shbt/BML-guenther/2024S-guenther-audio-primitives/util/Speech-Articulatory-Coding/envs"
+
+
+# 2025 02 10
+pip install pandas
+conda env export > environment_from_setuppy_20250210.yml
+

@@ -4,3 +4,5 @@
 */__pycache__
 outputs
 *.egg-info
+envs
+sample_audio
