@@ -10,9 +10,7 @@ This is the official code base for [Coding Speech through Vocal Tract Kinematics
 ## Installation
 
 ```
-git clone https://github.com/cheoljun95/Speech-Articulatory-Coding.git
-cd Speech-Articulatory-Coding
-pip install -e .
+pip install speech-articulatory-coding
 ```
 
 ## Usage
@@ -30,6 +28,13 @@ For pitch tracker, we found [PENN](https://github.com/interactiveaudiolab/penn) 
 ```python
 coder = load_model("en", device= "cpu", use_penn=True)    # Use PENN for pitch tracker
 
+```
+
+For inversion only, you can use the following,
+
+```python
+coder = load_model("feature_extraction") 
+coder_from_config = load_model(config="configs/feature_extraction.yaml")
 ```
 
 The following model checkpoints are offered. You can replace `en` with other models (`multi` or `en+`) in `load_model`.
@@ -81,8 +86,14 @@ sr = coder.sr
 Please check `notebooks/demo.ipynb` for a demonstration of the functions.
 
 
+### Training
+
+#### Feature extraction
+
+Check `scripts/encode_audio.py` and an example script for extracting LibriTTS, `scripts/extract_libritts.sh`
+
+
 ## TODO
 
 - Add training codes.
-- Add pypi installation.
 
