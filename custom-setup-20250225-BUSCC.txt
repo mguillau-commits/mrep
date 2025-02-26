@@ -1,0 +1,16 @@
+module load miniconda 
+
+# conda create -n sparc_20250225 python=3.9
+
+conda activate sparc_20250225
+
+
+
+pip install -e . 
+
+pip install ipykernel pandas scikit-learn
+
+python -m ipykernel install --user --name sparc_20250225 --display-name "Python (sparc_20250225)"
+
+
+
