@@ -1,22 +1,42 @@
 module load miniconda 
 # module unload ffmpeg
 
-# conda create -n sparc_20250225 python=3.9
 
-conda activate sparc_20250225
+ENV_NAME="sparc_20250225"
 
-conda install conda-forge::ffmpeg
+if ! conda env list | grep -q "${ENV_NAME}"; then
+  echo "Environment '${ENV_NAME}' not found. Creating..."
+  conda create --name "${ENV_NAME}" python=3.9 # Add desired packages here
+
+  conda install conda-forge::ffmpeg
+
+  git clone https://github.com/prlabu/Speech-Articulatory-Coding.git
+  pip install -e . 
+
+  pip install ipykernel pandas scikit-learn seaborn
+  pip install ffmpeg-python librosa
+  pip install textgrid
+  pip install gdown # for downloading folders from google drive
+
+  python -m ipykernel install --user --name sparc_20250225 --display-name "Python (sparc_20250225)"
+
+  # set up submodule gdtw, which uses precompiled binaries 
+  cd gdtw
+  python setup.py build_ext --inplace
+  pip install -e .
 
 
-git clone https://github.com/prlabu/Speech-Articulatory-Coding.git
-pip install -e . 
 
-pip install ipykernel pandas scikit-learn seaborn
-pip install ffmpeg-python librosa
-pip install textgrid
+else
+  echo "Environment '${ENV_NAME}' already exists. Activating..."
+  conda activate "${ENV_NAME}"
+fi
 
-python -m ipykernel install --user --name sparc_20250225 --display-name "Python (sparc_20250225)"
 
+
+
+
+--------
 
 
 

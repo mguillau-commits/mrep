@@ -7,3 +7,5 @@ outputs
 *.egg-info
 envs
 sample_audio
+
+data
