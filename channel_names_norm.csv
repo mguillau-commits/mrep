@@ -1,0 +1,37 @@
+id,name
+Channel_0, T3_x
+Channel_1,T3_y
+Channel_2, T2_x
+Channel_3, T2_y
+Channel_4, T1_x
+Channel_5, T1_y
+Channel_6, JAW_x
+Channel_7, JAW_y
+Channel_8, UL_x
+Channel_9, UL_y
+Channel_10, LL_x
+Channel_11, LL_y
+Channel_12, T3_x_d
+Channel_13, T3_y_d
+Channel_14, T2_x_d
+Channel_15, T2_y_d
+Channel_16, T1_x_d
+Channel_17, T1_y_d
+Channel_18, JAW_x_d
+Channel_19, JAW_y_d
+Channel_20, UL_x_d
+Channel_21, UL_y_d
+Channel_22, LL_x_d
+Channel_23, LL_y_d
+Channel_24, T3_x_dd
+Channel_25, T3_y_dd
+Channel_26, T2_x_dd
+Channel_27, T2_y_dd
+Channel_28, T1_x_dd
+Channel_29, T1_y_dd
+Channel_30, JAW_x_dd
+Channel_31, JAW_y_dd
+Channel_32, UL_x_dd
+Channel_33, UL_y_dd
+Channel_34, LL_x_dd
+Channel_35, LL_y_dd

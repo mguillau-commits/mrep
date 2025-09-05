@@ -1,16 +1,47 @@
 module load miniconda 
+# module unload ffmpeg
 
 # conda create -n sparc_20250225 python=3.9
 
 conda activate sparc_20250225
 
+conda install conda-forge::ffmpeg
 
 
+git clone https://github.com/prlabu/Speech-Articulatory-Coding.git
 pip install -e . 
 
-pip install ipykernel pandas scikit-learn
+pip install ipykernel pandas scikit-learn seaborn
+pip install ffmpeg-python librosa
+pip install textgrid
 
 python -m ipykernel install --user --name sparc_20250225 --display-name "Python (sparc_20250225)"
 
 
 
+
+
+
+
+git config --local user.email "1thisisfornothing1@gmail.com"
+  git config --local user.name "Latane Bullock"
+
+
+# ------ for DTW matching of speech 
+# gdtw_test_20250529_2 python=3.6
+# gdtw_test_20250530 python=3.7 
+
+conda create -n gdtw_test_20250530 python=3.7
+conda activate gdtw_test_20250530
+which pip 
+pip install ipykernel pandas librosa seaborn
+
+python -m ipykernel install --user --name gdtw_test_20250530 --display-name "Python (gdtw_test_20250530)"
+
+
+git clone https://www.github.com/dderiso/gdtw
+cd gdtw
+# python setup.py install
+
+python setup.py build_ext --inplace
+pip install -e .
