@@ -99,7 +99,7 @@ class Inversion(BaseExtractor):
             low_acoustics_ = speech_outputs.hidden_states[self.spk_target_layer].cpu().numpy()
             outputs["acoustics"] = low_acoustics_
 
-        print('_extract_ema: v4')
+        # print('using _extract_ema: v4')
         outputs["acoustics_wvlm"] = states # PLB 2025 01 15
 
         return outputs
