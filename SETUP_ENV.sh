@@ -1,6 +1,7 @@
 # git clone https://github.com/prlabu/Speech-Articulatory-Coding.git
 # cd Speech-Articulatory-Coding
 
+module load miniconda # if on BU-SCC 
 
 ENV_NAME="sparc_20250905"
 
@@ -26,7 +27,7 @@ if ! conda env list | grep -q "${ENV_NAME}"; then
   pip install -e .
 
   # download data
-  cd ..
+  cd ..    # this should get us to Speech-Articulatory-Coding
     gdown --folder "https://drive.google.com/drive/folders/1rLat9KZzaptDakIKtd_1kfIFNJErwuzL" -O ./data
 
 
