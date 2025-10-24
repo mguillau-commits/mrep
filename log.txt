@@ -1,0 +1,20 @@
+Melen's version of seamstress ased on Latane's work, changes from his original scripts can be found here with date of changes
+
+10/22/25:
+    Ran the whole install process on my computer, had to do some modifications to make it work
+        -Had to pip install a bunch of stuff not included in the setup procedure
+        -Removed the try-expect block for the import of the penn otherwise library was not imported idk why in src_extrqctor.py.
+        -Removed import of dtw functions, there are some issues while importing the package, error is  "No module named 'gdtwcpp'", probably easy to fix but I don't need it rn, so I commented the section. 
+        I'll work on that later.
+
+    latane-demo-cleaned_MelenPG
+        In apply_perturbation()
+        Latane was doing multiple interpolation, I couldn't understand the reason behind that, I modified it to only one. Feels like it's better but we will need to discuss
+        I noticed an issue with time series of time in .wav files. I've got no clue why as of now, but last time is doubled at the end for no apparent reason. 
+        Feels like it's the case on all files. Working on a way to fix this issue computationaly-wise but it's raising questions. We wll have to talk about that.
+
+ 10/22/25:
+    Trying to make dilation mamipulation more straightforward, there are currently 3 timing in the script. onset of manipulation, window, magnitude
+
+
+

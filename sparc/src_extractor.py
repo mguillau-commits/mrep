@@ -7,10 +7,9 @@ import pickle
 import librosa
 import torchcrepe
 from .speech import BaseExtractor, SpeechWave
-try: 
-    import penn
-except:
-    penn = None
+
+import penn
+
 
 
 def normalize_pitch(self, pitch, periodicity, logratio=False):
