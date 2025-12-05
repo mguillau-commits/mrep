@@ -19,6 +19,17 @@ Melen's version of seamstress ased on Latane's work, changes from his original s
 10/24/25:
     Created new function dilate, that is specially designed for duration manipulation, possible to include in original function by Latane but wasn't sure this was the best solution
     I removed the last time 
-
+10/28/25:
+    Creation of a function to do multiple dilations in one sweep successive_dilation
+10/29/25:
+    successive_dilation is working and .wav signal can be synthetized from it
+11/14/25:
+    Created a new notebook Julia_nb to make modifications of an audio signal more straightforward. Added 2 new functions, one dealing with pitch+intensity shifts, another one dealing with the application of multiple transformation
+    I wanted all perturbations to be entered in original signal timing meaning that all dilation of time arrives after all perturbations of pitch or intensity.
+    Otherwise, order of dilation would have changed the output, which is not desirable.
+12/1/25:
+    -Created a new notebook to perform duration and prominence modifications sequentially and seperately. It is less computationally optimized but maybe more biologicaly valid and will help us pinpoint exactly the consequence of different manipulations
+    -Made my script compatible with Julia's output format, with the new routines, we can generate audio from a dictionary, sparc and audio recordings of unaccentuated words (could be syllables too, but now it's words)
+    -Currently cleaning the julia_nb_latversion
 
 

@@ -1,0 +1,9 @@
+WORD;stress_pattern;.wav;sem
+GODIVA;['weak','strong','weak'];godiva.wav;N
+IMPORT;['strong','weak'];import.wav;N
+IMPORT;['weak','strong'];import.wav;V
+IMPORTING;['weak','strong','weak'];importing.wav;N
+IMPORTANT;['weak','strong','weak'];important.wav;N
+ANTLER;['strong','weak'];antler.wav;N
+OBJECT;['strong','weak'];object.wav;N
+OBJECT;['weak','strong'];object.wav;V
